@@ -1,0 +1,62 @@
+Release History:
+	20220330:
+		1. update the firmware file for RTL8723D and RTL8852A
+		2. rtk_btusb: fine-tune the code for Coverity defect
+		3. add support for RTL8821DU
+		4. support for Linux Kernel 5.16
+	20220110:
+		1. update the firmware files for RTL8852B, RTL8723F, RTL8761B, RTL8822C
+		2. add pid for RTL8852BE, RTL8852CE, RTL8851AU, RTL8851ASA
+		3. hci_ldisc: find-tune wakeup/resume behavior
+	20211102:
+		1. add the support for RTL8852C
+		2. update the fw files for RTL8723F, RTL8725A, RTL8761B, RTL8821C, RTL8852A, RTL8852B
+		3. coex: Filter out some cmd cmplt and status events
+		4. rtk_misc: add pid for RTL8852BU and RTL8852CU
+		5. hci_ldisc: backport 3b830a9c34d5897be07176ce4e6f2d75e2c8cfd7 to fix the compiling error after Kernel 5.10.20 or later.
+		6. hci_ldisc: fix rcu can not connect to dut after resume from suspend
+		7. hci_ldisc: Refine the write work sched
+		8. hci_ldisc: Start le scan after resuming from suspending
+		9. btrtk_sdio: remove HCI_QUIRK_RESET_ON_CLOSE
+	20210819:
+        	1. add the support for RTL8852B
+        	2. update the fw files for RTL8723F
+	20210706:
+        	1. fixed the compiling error of rtk_btusb .
+	20210628:
+		1. update fw files for RTL8822B, RTL8723D, RTL8821C, RTL8822C, RTL8821DS, RTL8761B, RTL8725A, RTL8723F
+		2. rtk_btusb: backport the usb alternate settings from Upstream
+	20210423:
+		1. update the firmware files for rtl8723f, rtl8725a, rtl8761b, rtl8822c, rtl8852a
+		2. misc: add the more support ID for RTL8852AE
+		3. btrtksdio: btrtl: add the support for 32k+ fw patch
+	20210324:
+		1. update firmware files for rtl8822b, rtl8723d, rtl8821c, rtl8822c, rtl8761b, 
+		   rtl8725a, rtl8723f
+		2. update config file to disable 3M packet type for less interference
+		3. misc: add supported USB VID/PID for RTL8723DE, RTL8821CE and RTL8822CE
+		4. misc: fine-tune fw_patch_table to maintain the supported id in only one table
+	20201202:
+		update firmware files for rtl8723d, rtl8821c, rtl8852a
+		update firmware files for rtl8723f, rtl8761b, rtl8725a
+	20201026:
+		update firmware file for rtl8822c
+		coex: Fix incorrect profile judgement issue in acl disc
+	20200812: 
+		update the config file for rtl8821cu to fix the bring-up issue on Linux Kernel 4.19+
+		add the support for RTL8723F
+	20200610:
+		update the FW files for rtl8821c and rtl8761b
+
+Software Package Feature:
+	Bluez
+	Other software based on HCI, L2CAP, RFCOMM, SCO and Management sock 
+
+Hardware Supported:
+	All Realtek Bluetooth Chip.
+
+Platform Supported:
+	Linux kernel V2.6.32-5.16.13
+
+CPU supported:
+	ARM/MIPS/X86
