@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: GPL-2.0
+
+menu "Realtek Bluetooth driver"
+	depends on BT
+
+config RTKBT_SDIO
+	tristate "Realtek Bluetooth SDIO driver"
+	select BT_HCIBTSDIO
+
+config RTKBT_UART
+        tristate "Realtek Bluetooth UART driver"
+        select BT_HCIUART
+
+config RTKBT_USB
+	tristate "Realtek Bluetooth USB driver"
+	select BT_HCIBTUSB
+
+endmenu
