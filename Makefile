@@ -61,3 +61,44 @@ ifneq (,$(filter sdio all,$(INTERFACE)))
 	make -C $(SRC_ROOT_DIR) install
 endif
 
+uninstall:
+ifneq (,$(filter usb all,$(INTERFACE)))
+	@echo "Start Realtek Bluetooth USB driver uninstallation"
+	$(eval FW_FILE := rtl*_fw)
+	$(eval CONFIG_FILE := rtl*_config)
+	$(eval FW_DIR := $(FW_USB_DIR))
+	$(eval SRC_ROOT_DIR := usb)
+	make -C $(SRC_ROOT_DIR) uninstall
+	@echo "Remove $(FW_DIR)/$(FW_FILE)"
+	sudo rm -f $(FW_DIR)/$(FW_FILE)
+	@echo "Remove $(FW_DIR)/$(CONFIG_FILE)"
+	sudo rm -f $(FW_DIR)/$(CONFIG_FILE)
+endif
+
+ifneq (,$(filter uart all,$(INTERFACE)))
+	@echo "Start Realtek Bluetooth UART driver uninstallation"
+	$(eval FW_FILE := rtlbt/rtl*_fw)
+	$(eval CONFIG_FILE := rtlbt/rtl*_config)
+	$(eval FW_DIR := $(FW_UART_DIR))
+	$(eval SRC_ROOT_DIR := uart)
+	make -C $(SRC_ROOT_DIR) uninstall
+	@echo "Remove $(FW_DIR)/$(FW_FILE)"
+	sudo rm -f $(FW_DIR)/$(FW_FILE)
+	@echo "Remove $(FW_DIR)/$(CONFIG_FILE)"
+	sudo rm -f $(FW_DIR)/$(CONFIG_FILE)
+endif
+
+
+
+ifneq (,$(filter sdio all,$(INTERFACE)))
+	@echo "Start Realtek Bluetooth SDIO driver uninstallation"
+	$(eval FW_FILE := rtl_bt/rtl*_fw)
+	$(eval CONFIG_FILE := rtl_bt/rtl*_config)
+	$(eval FW_DIR := $(FW_SDIO_DIR))
+	$(eval SRC_ROOT_DIR := sdio)
+	make -C $(SRC_ROOT_DIR) uninstall
+	@echo "Remove $(FW_DIR)/$(FW_FILE)"
+	sudo rm -f $(FW_DIR)/$(FW_FILE)
+	@echo "Remove $(FW_DIR)/$(CONFIG_FILE)"
+	sudo rm -f $(FW_DIR)/$(CONFIG_FILE)
+endif
